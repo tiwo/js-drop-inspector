@@ -44,17 +44,17 @@
 			if (item.kind == 'string') kind_class = 'strings';
 			var text = '#' + itemno + ' ' + item.kind + '(' + item.type + ') ';
 			createchild(li, 'span', {'class':kind_class}, text);
-			appendText(li, );
+
+			var item_string = createchild(li, 'span', {});
+			
 			item.getAsString(function(s){
-				appendText(li, ' - ' + s + ' ');
+				appendText(item_string, '- ' + s + ' ');
 			})
 		
-			setTimeout(function() {
-				var logItem_btn = createchild(li, 'a', {href:'#'}, 'console.log');
-				logItem_btn.addEventListener('click', function(ev) {
-					console.log(item);
-				})
-			}, 100 + 30*k);
+			var logItem_btn = createchild(li, 'a', {href:'#'}, 'log item');
+			logItem_btn.addEventListener('click', function(ev) {
+				console.log(item);
+			})
 		}
 
 		var items = drop_event.dataTransfer.items;
