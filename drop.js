@@ -58,12 +58,19 @@
 
 			appendText(li, ' / ');
 
-			var logString_btn = createchild(li, 'a', {href:'#'}, 'log string');
-			logString_btn.addEventListener('click', function(ev) {
-				item.getAsString(function(s) {
-					console.log({'string': s});
+			if (item.kind == 'string') {
+				var logString_btn = createchild(li, 'a', {href:'#'}, 'log string');
+				logString_btn.addEventListener('click', function(ev) {
+					item.getAsString(function(s) {
+						console.log({'string': s});
+					});
 				});
-			})
+			} else if (item.kind == 'file') {
+				var logFile_btn = createchild(li, 'a', {href:'#'}, 'log file');
+				logFile_btn.addEventListener('click', function(ev) {
+					console.log(item.getAsFile());
+				});
+			}
 
 		}
 
@@ -90,7 +97,7 @@
 
 		if (dropped_files.length) {
 		      	var logFiles_btn = createchild(buttonzone, 'button', {},
-					'log any files');
+					'log all ' + dropped_files.length + ' files');
 			logFiles_btn.classList.add('files');
 			logFiles_btn.addEventListener('click', function(ev) {
 				for (var k = 0; k < dropped_files.length; ++k)
