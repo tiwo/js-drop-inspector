@@ -1,0 +1,56 @@
+﻿body {
+	background: #ddd;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	text-transform: none;
+	padding: 0px 8px;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+.framed {
+	border: 5px solid blue;
+	background: #ddf;
+}
+
+.centered {
+	align: center;
+	margin:0px;
+	width: 90%;
+	height: 200px;
+	text-align: center;
+	line-height: 200px;
+}
+
+.hovering {
+	border: 5px solid green;
+	background: #dfd;
+}
+
+div#buttons {
+	margin: 20px 0px;
+}
+
+div#buttons button {
+	width: 100%;
+}
+
+div#buttons button[type='reset']::before {
+	content: '♻️ ';
+}
+
+.files::before {
+	content: '📂 ';
+}
