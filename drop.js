@@ -140,7 +140,6 @@
 		}
 
 		function say_thankyou(ev) {
-			console.log(ev);
 			var old_content = ev.target.innerHTML;
 			ev.target.innerHTML = 'thank you!';
 			setTimeout(function(){ev.target.innerHTML = ''}, 333);
@@ -159,10 +158,8 @@
 	var buttonzone = document.getElementById('buttons');
 
 	var dropzones = document.getElementsByClassName('dropzone');
-	console.log(dropzones);
 
 	for (var k = 0; k < dropzones.length; ++k) {
-		console.log(k);
 		attachListeners(dropzones[k], buttonzone, printoutzone);
 	}
 })();
