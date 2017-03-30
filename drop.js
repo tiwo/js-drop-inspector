@@ -55,6 +55,14 @@
 			logItem_btn.addEventListener('click', function(ev) {
 				console.log(item);
 			})
+
+			appendText(li, ' / ');
+
+			var logString_btn = createchild(li, 'a', {href:'#'}, 'log string');
+			logString_btn.addEventListener('click', function(ev) {
+				item.getAsString(console.log);
+			})
+
 		}
 
 		var items = drop_event.dataTransfer.items;
