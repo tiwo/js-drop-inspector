@@ -77,6 +77,9 @@
 
 		removeAllChildren(buttonzone);
 
+		createchild(buttonzone, 'p', {},
+			'open your javascript console. In Firefox, use Shift+Ctrl+I'
+		);
 		var logEvent_btn = createchild(buttonzone, 'button', {},
 				'console.log the drop event');
 		logEvent_btn.addEventListener('click', function(ev) {
