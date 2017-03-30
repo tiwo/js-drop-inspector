@@ -16,6 +16,31 @@ a {
 	text-decoration: none;
 }
 
+div.ribbon {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+div.ribbon>div {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+}
+
+div.ribbon>div>a {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 2px 15px;
+	text-align: center;
+	transform: rotate(30deg);
+	display: block;
+	border: 1px solid green;
+	background: #dfd;
+}
+
 h1 {
 	font-weight: bold;
 }
