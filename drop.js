@@ -60,7 +60,9 @@
 
 			var logString_btn = createchild(li, 'a', {href:'#'}, 'log string');
 			logString_btn.addEventListener('click', function(ev) {
-				item.getAsString(console.log);
+				item.getAsString(function(s) {
+					console.log({'string': s});
+				});
 			})
 
 		}
